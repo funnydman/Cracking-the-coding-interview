@@ -8,7 +8,34 @@ to be after the elements less than x (see below). The partition element x can ap
 
 from general import *
 
-head = build_from_list([1, 2, 3, 4, 5])
+head = build_from_list([1, 4, 3, 2, 5, 2])
 
-def partition():
-    pass
+
+def partition(head, x):
+    curr = head
+
+    before = before_head = Node(None)
+    after = after_head = Node(None)
+
+    while curr != None:
+        if curr.data < x:
+            # print(curr.data)
+            before.next = Node(curr.data)
+            before = before.next
+        else:
+            after.next = Node(curr.data)
+            after = after.next
+
+        curr = curr.next
+
+    after.next =  None
+    before.next = after_head.next
+
+    return before_head.next
+
+
+head = partition(head, 3)
+
+
+# output 1->2->2 (join) 4->3->5
+print_list(head)
