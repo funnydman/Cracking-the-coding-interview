@@ -7,6 +7,8 @@ the original string. You can assume the string has only uppercase and lowercase 
 
 
 """
+
+
 # The runtime is O(p + k^2), p is size of the orig string, k is the num of character sequences
 def string_compression(string):
     if not string:
@@ -15,9 +17,9 @@ def string_compression(string):
     compressed_str = ''
     count = 0
     for i in range(len(string)):
-        count+=1
+        count += 1
 
-        if i+1 >= len(string) or string[i] != string[i+1]:
+        if i + 1 >= len(string) or string[i] != string[i + 1]:
             compressed_str += string[i] + str(count)
             count = 0
 
@@ -29,5 +31,3 @@ def string_compression(string):
 
 assert string_compression('aabbbg') == 'a2b3g1'
 assert string_compression('abc') == 'abc'
-
-

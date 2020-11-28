@@ -5,7 +5,8 @@ Todo: implement recursively
 
 from general import *
 
-head = build_from_list([1,2,7,2,1])
+head = build_from_list([1, 2, 7, 2, 1])
+
 
 def reverse_list(head):
     curr = head
@@ -18,6 +19,7 @@ def reverse_list(head):
 
         curr = curr.next
     return last
+
 
 # reverse and compare
 def is_palindrome(head):
@@ -56,5 +58,6 @@ def is_palindrome1(head):
         slow = slow.next
 
     return True
+
 
 print(is_palindrome1(head))

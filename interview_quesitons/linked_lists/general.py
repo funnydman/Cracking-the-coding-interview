@@ -2,8 +2,10 @@ class Node:
     def __init__(self, data: int):
         self.next = None
         self.data = data
+
     def __str__(self):
         return f'<data={self.data}>'
+
 
 def add(head: Node, value: int) -> None:
     end = Node(value)
@@ -14,11 +16,13 @@ def add(head: Node, value: int) -> None:
 
     current.next = end
 
+
 def print_list(head: Node):
     current = head
     while current != None:
         print(current)
         current = current.next
+
 
 def build_from_list(alist: list) -> 'Node':
     if not alist:
@@ -30,7 +34,6 @@ def build_from_list(alist: list) -> 'Node':
         current.next = Node(i)
         current = current.next
     return head
-
 
 
 # delete node from a single linked list
@@ -50,6 +53,3 @@ def delete_node(head: Node, value: int):
         current = current.next
 
     raise Exception('Element not found')
-
-
-

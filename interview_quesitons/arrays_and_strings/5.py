@@ -21,9 +21,9 @@ def check_edits(str1, str2):
                 edited = True
 
                 if len(str1) > len(str2):
-                    str1 = str1[:i] + str1[i+1:]
+                    str1 = str1[:i] + str1[i + 1:]
                 else:
-                    str2 = str2[:i] + str2[i+1:]
+                    str2 = str2[:i] + str2[i + 1:]
         return True
 
     if len(str1) == len(str2):
@@ -35,6 +35,7 @@ def check_edits(str1, str2):
                 edited = True
         return True
 
+
 assert check_edits('pale', 'pale') is True
 assert check_edits('pale', 'ple') is True
 assert check_edits('pales', 'pale') is True
@@ -42,5 +43,3 @@ assert check_edits('pale', 'bale') is True
 
 assert check_edits('pale', 'bake') is False
 assert check_edits('gale', 'bali') is False
-
-

@@ -12,7 +12,7 @@ There is O(n) solutions as well, for instance Knuth–Morris–Pratt algorithm
 
 def is_rotation(string1, string2):
     if len(string1) != len(string2):
-            return False
+        return False
     if len(string1) == 0:
         return True
     length1 = len(string1)
@@ -21,9 +21,10 @@ def is_rotation(string1, string2):
         return string2 in string11
     return False
 
+
 assert is_rotation('abcde', 'cdeab') is True
+
 
 # simple check O(n^2)
 def rotate_string(A, B):
-    return len(A) == len(B) and B in A+A
-
+    return len(A) == len(B) and B in A + A

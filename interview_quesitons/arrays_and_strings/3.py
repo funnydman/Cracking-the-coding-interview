@@ -7,17 +7,19 @@ perform this operation in place.)
 
 """
 
+
 def strip(string):
     i = 0
-    l  = len(string)
+    l = len(string)
     while i < l:
         if string[0] == ' ':
             string = string[1:]
 
         if string[-1] == ' ':
             string = string[:-1]
-        i+=1
+        i += 1
     return string
+
 
 def encode_space(string, symbol='%20'):
     alist = list(string)
@@ -25,6 +27,7 @@ def encode_space(string, symbol='%20'):
         if alist[i] == ' ':
             alist[i] = symbol
     return ''.join(alist)
+
 
 def encode_space1(string, symbol='%20'):
     new_str = ''
@@ -35,7 +38,7 @@ def encode_space1(string, symbol='%20'):
             new_str += i
     return new_str
 
+
 assert encode_space(strip('              a  b c   ')) == 'a%20%20b%20c'
 
 assert encode_space1(strip('a bc')) == 'a%20bc'
-

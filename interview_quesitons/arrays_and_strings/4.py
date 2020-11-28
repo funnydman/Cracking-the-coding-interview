@@ -7,10 +7,12 @@ EXAMPLE
 Input: Tact Coa
 Output: True (permutations: "taco cat". "atco cta". etc.)
 """
+
+
 # todo implement
 def is_perm_of_palindrome(string):
     pass
 
+
 string = 'ana'
 print(is_perm_of_palindrome(string))
-

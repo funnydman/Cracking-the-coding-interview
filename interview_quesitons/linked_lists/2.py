@@ -7,6 +7,7 @@ from general import *
 
 head = build_from_list([1, 2, 3, 4, 5])
 
+
 # Solution 1: If linked list size is known
 # if linked list size is known -> solution is trivial, then the kth to last is the (length - k)th element.
 
@@ -36,6 +37,7 @@ def k_to_last(head, n):
         slow = slow.next
     slow.next = slow.next.next
     return head
+
 
 head = k_to_last(head, 2)
 print_list(head)

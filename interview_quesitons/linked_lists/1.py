@@ -11,6 +11,7 @@ from general import *
 
 head = build_from_list([1, 5, 3, 1, 2])
 
+
 # takes O(n) time
 def delete_duplicates(head: Node):
     alist = []
@@ -25,6 +26,7 @@ def delete_duplicates(head: Node):
 
         head = head.next
 
+
 # follow up: no buffer allowed O(n^2) time, O(1) space
 # using nested while
 
@@ -38,6 +40,7 @@ def delete_dups(head):
             else:
                 runner = runner.next
         current = current.next
+
 
 delete_dups(head)
 print_list(head)

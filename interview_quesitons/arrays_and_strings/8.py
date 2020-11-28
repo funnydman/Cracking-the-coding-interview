@@ -9,7 +9,8 @@ Notes:
 column as a replacement for the column array.
 """
 
- def set_zeroes(matrix):
+
+def set_zeroes(matrix):
     m = len(matrix)
     n = len(matrix[0])
 
@@ -27,4 +28,3 @@ column as a replacement for the column array.
                 # zeroing the column
                 for c in range(m):
                     matrix[c][j] = 0
-

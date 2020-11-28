@@ -28,14 +28,13 @@ def partition(head, x):
 
         curr = curr.next
 
-    after.next =  None
+    after.next = None
     before.next = after_head.next
 
     return before_head.next
 
 
 head = partition(head, 3)
-
 
 # output 1->2->2 (join) 4->3->5
 print_list(head)

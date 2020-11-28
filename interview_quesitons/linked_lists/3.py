@@ -9,15 +9,17 @@ from general import *
 
 head = build_from_list([1, 2, 3, 4, 5])
 
+
 def get_by_index(head, index):
     current = head
     i = 0
-    while current !=None:
+    while current != None:
         if i == index:
             return current
         current = current.next
-        i+=1
+        i += 1
     raise IndexError
+
 
 node = get_by_index(head, 2)
 

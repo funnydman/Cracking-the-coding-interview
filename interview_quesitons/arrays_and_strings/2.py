@@ -8,6 +8,7 @@ Notes:
 
 """
 
+
 # pythonic way (or we could sort the strings)
 def check_permutation(str1, str2):
     if len(str1) != len(str2):
@@ -16,6 +17,7 @@ def check_permutation(str1, str2):
         return True
     return False
 
+
 # count characters
 def check_permutation1(str1, str2):
     letters = {}
@@ -23,7 +25,7 @@ def check_permutation1(str1, str2):
         if str1[i] not in letters:
             letters[str1[i]] = 0
 
-        letters[str1[i]] +=1
+        letters[str1[i]] += 1
 
     for i in range(len(str2)):
         if str2[i] not in letters:
@@ -33,7 +35,6 @@ def check_permutation1(str1, str2):
             return False
 
     return True
-
 
 
 assert check_permutation('123', '291') is False

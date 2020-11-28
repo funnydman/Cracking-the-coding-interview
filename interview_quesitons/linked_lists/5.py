@@ -12,6 +12,7 @@ from general import *
 list1 = build_from_list([7, 1, 6])
 list2 = build_from_list([5, 9, 2])
 
+
 # assume that linked lists have the same length.
 def sum_lists(list1, list2):
     curr = curr_head = Node(None)
