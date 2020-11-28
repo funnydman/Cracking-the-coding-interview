@@ -10,23 +10,22 @@ from general import *
 
 headA = build_from_list([4, 1])
 
-headB = build_from_list([5, 6, 1])
+headB = build_from_list([5])
 
-headA.next = headB.next = Node(8)
-headA.next.next = headB.next.next = Node(4)
-headA.next.next.next = headB.next.next.next = Node(5)
+headA.next.next = headB.next = Node(8)
+headA.next.next.next = headB.next.next = Node(5)
 
 
-def interseciton(headA, headB):
+def intersection(headA, headB):
     cur1, cur2 = headA, headB
 
     len1 = len2 = 0
 
-    while cur1.next:
+    while cur1:
         len1 += 1
         cur1 = cur1.next
 
-    while cur2.next:
+    while cur2:
         len2 += 1
         cur2 = cur2.next
 
@@ -36,10 +35,14 @@ def interseciton(headA, headB):
     cur1, cur2 = headA, headB
 
     diff = abs(len1 - len2)
-    node = cur1 if max(len1, len2) == len1 else cur2
+    m = max(len1, len2)
 
     for _ in range(diff):
-        node = node.next
+        if m == len1:
+            cur1 = cur1.next
+        else:
+            cur2 = cur2.next
+
     while cur1 and cur2:
         if cur1 is cur2:
             return cur1.data
@@ -48,4 +51,18 @@ def interseciton(headA, headB):
     return
 
 
-print(interseciton(headA, headB))
+def intersection1(head_A, head_B):
+    if head_A == None or head_B == None:
+        return None
+
+    a_pointer = headA
+    b_pointer = headB
+
+    while a_pointer != b_pointer:
+        a_pointer = headB if a_pointer == None else a_pointer.next
+        b_pointer = headA if b_pointer == None else b_pointer.next
+
+    return a_pointer
+
+
+print(intersection(headA, headB))
