@@ -19,7 +19,7 @@ head.next.next = head.next
 
 
 def is_loop(head):
-    d  = []
+    d = []
     cur1 = head
     while cur1 != None:
         if cur1 in d:
