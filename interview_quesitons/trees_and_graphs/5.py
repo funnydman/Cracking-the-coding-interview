@@ -3,6 +3,8 @@ Task:
 Validate 8ST: Implement a function to check if a binary tree is a binary search tree.
 Notes:
     1 approach - use in order traversal and check elements (they must in inc order).
+    fix: change from root.val > _max to root.val >= _max
+    https://leetcode.com/problems/validate-binary-search-tree/
 """
 
 from general import TreeNode
