@@ -2,42 +2,43 @@
 Task:
 Check Permutation: Given two strings, write a method to decide if one is a permutation of the
 
-Notes:
+Questions to ask:
 1) Is permutation comparison is case sensitive (is God a permutation of a dog)?
-2) Is white space significant (for this task: yes)?
+2) Is white space significant (for this task: yes)
 
 """
 
 
-# pythonic way (or we could sort the strings)
-def check_permutation(str1, str2):
-    if len(str1) != len(str2):
+def check_permut1(string1, string2):
+    if len(string1) != len(string2):
         return False
-    if set(str1) == set(str2):
-        return True
-    return False
+
+    return sorted(string1) == sorted(string2)
 
 
-# count characters
-def check_permutation1(str1, str2):
-    letters = {}
-    for i in range(len(str1)):
-        if str1[i] not in letters:
-            letters[str1[i]] = 0
+def check_permut2(string1, string2):
+    res = 0
+    for n in list(map(ord, string1))+list(map(ord, string2)):
+        res ^=n
+    return res == 0
 
-        letters[str1[i]] += 1
+def check_permut3(string1, string2):
+    adict = {}
+    for i, c  in enumerate(string1):
+        if c not in adict:
+            adict[c] = 0
+        adict[c]+=1
 
-    for i in range(len(str2)):
-        if str2[i] not in letters:
+    for i, c in enumerate(string2):
+        if c not in adict:
             return False
-        letters[str2[i]] -= 1
-        if letters[str2[i]] < 0:
-            return False
+        adict[c]+=-1
 
+        if adict[c] < 0:
+            return False
     return True
 
+print(check_permut3("abcd" , "badc"))
 
-assert check_permutation('123', '291') is False
+print(check_permut3("abcm" , "badc"))
 
-assert check_permutation1('123', '231') is True
-assert check_permutation1('123', '291') is False
