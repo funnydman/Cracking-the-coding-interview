@@ -9,10 +9,11 @@ Output: True (permutations: "taco cat". "atco cta". etc.)
 """
 
 
-# todo implement
+
 def is_perm_of_palindrome(string):
-    pass
+    string = string.strip().lower().replace(" ", "")
+    l = len(string)
+    return len(set(string))==l//2 if len(string) % 2 == 0  else len(set(string))==(l//2 +1)
 
 
-string = 'ana'
-print(is_perm_of_palindrome(string))
+assert is_perm_of_palindrome("Tact Coa") is True
