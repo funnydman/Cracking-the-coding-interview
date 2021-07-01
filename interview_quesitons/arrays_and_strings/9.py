@@ -10,6 +10,22 @@ There is O(n) solutions as well, for instance Knuth–Morris–Pratt algorithm
 """
 
 
+
+class Solution:
+    def rotateString(self, s: str, goal: str) -> bool:
+        if len(s) != len(goal):
+            return False
+        if s == "" and goal == "":
+            return True
+
+        for i in range(len(s)):
+            if goal == s:
+                return True
+            s = s[1:] + s[0]
+
+        return False
+    
+
 def is_rotation(string1, string2):
     if len(string1) != len(string2):
         return False
@@ -23,6 +39,7 @@ def is_rotation(string1, string2):
 
 
 assert is_rotation('abcde', 'cdeab') is True
+
 
 
 # simple check O(n^2)
