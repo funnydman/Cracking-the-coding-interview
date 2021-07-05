@@ -36,6 +36,12 @@ def delete_node(node):
 
     return True
 
+def delete_middle_node(node):
+    temp = node
+    temp.val = temp.next.val
+
+    temp.next = temp.next.next
+
 
 delete_node(node)
 print_list(head)
