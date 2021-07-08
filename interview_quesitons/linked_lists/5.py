@@ -32,6 +32,41 @@ def sum_lists(list1, list2):
     return curr_head.next
 
 
+
+def sum_lists_forward(first, second):
+    curr = curr_head = Node(None)
+    res = 0
+
+    length = 0
+    temp = first
+    while temp:
+        length += 1
+        temp = temp.next
+
+    i = length - 1
+    while first != None:
+        res += (first.val + second.val) * 10**i
+        i -=1
+
+
+        first = first.next
+        second = second.next
+
+
+    i = length - 1
+    while res != 0:
+        a = res // 10**i
+
+        res = res % 10**i
+
+
+        curr.next = Node(a)
+        curr = curr.next
+        i -=1
+
+    return curr_head.next
+
+
 head = sum_lists(list1, list2)
 
 # 9 -> 1 ->2
