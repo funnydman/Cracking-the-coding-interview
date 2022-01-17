@@ -14,17 +14,20 @@ head = build_from_list([1, 5, 3, 1, 2])
 
 # takes O(n) time
 def delete_duplicates(head: Node):
-    alist = []
-    previous = Node(None)
+    seen = set()
+    prev = Node(-1)
 
-    while head != None:
-        if head.data in alist:
-            previous.next = head.next
+    temp = head
+
+    while temp:
+        if temp.value in seen:
+            prev.next = temp.next
         else:
-            alist.append(head.data)
-            previous = head
+            seen.add(temp.value)
+            prev = temp
 
-        head = head.next
+        temp = temp.next
+    return head
 
 
 # follow up: no buffer allowed O(n^2) time, O(1) space
