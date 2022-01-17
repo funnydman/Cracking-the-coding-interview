@@ -32,17 +32,19 @@ def delete_duplicates(head: Node):
 
 # follow up: no buffer allowed O(n^2) time, O(1) space
 # using nested while
-
-def delete_dups(head):
+def delete_duplicates(head: Node):
     current = head
-    while current != None:
+
+    while current:
         runner = current
-        while runner.next != None:
-            if runner.next.data == current.data:
+        while runner.next:
+            if runner.next.value == current.value:
                 runner.next = runner.next.next
             else:
                 runner = runner.next
         current = current.next
+
+    return head
 
 
 delete_dups(head)
