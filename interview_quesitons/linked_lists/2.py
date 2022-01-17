@@ -13,16 +13,16 @@ head = build_from_list([1, 2, 3, 4, 5])
 
 # Solution 2: Recursive
 # Don't return the element
-# def k_to_last(head, k):
-#     if head is None:
-#         return 0
-#     index = k_to_last(head.next, k, i)
-#     i+=1
-#     if index == k:
-#         print(k, 'th to the last node is', head.data)
-#     return index
+# todo: fix it!
+def k_to_last_rec(head, k):
+    if head is None:
+        return 0
+    index = k_to_last_rec(head.next, k) + 1
+    if index == k:
+        print(k, 'th to the last node is', head.value)
+    return index
 
-# k_to_last(head, 2)
+k_to_last_rec(head, 2)
 
 # Solution 3: Iterative
 def k_to_last(head, n):
