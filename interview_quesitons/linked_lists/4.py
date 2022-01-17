@@ -17,9 +17,8 @@ def partition(head, x):
     before = before_head = Node(None)
     after = after_head = Node(None)
 
-    while curr != None:
+    while curr:
         if curr.data < x:
-            # print(curr.data)
             before.next = Node(curr.data)
             before = before.next
         else:
@@ -36,5 +35,4 @@ def partition(head, x):
 
 head = partition(head, 3)
 
-# output 1->2->2 (join) 4->3->5
 print_list(head)
