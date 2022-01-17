@@ -12,7 +12,7 @@ from general import *
 head = build_from_list([1, 5, 3, 1, 2])
 
 
-# takes O(n) time
+# takes O(n) time, O(n) space
 def delete_duplicates(head: Node):
     seen = set()
     prev = Node(-1)
