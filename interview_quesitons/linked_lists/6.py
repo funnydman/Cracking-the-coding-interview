@@ -25,7 +25,7 @@ def reverse_list(head):
 def is_palindrome(head):
     reversed_list = reverse_list(head)
     print_list(reversed_list)
-    while head != None and reversed_list != None:
+    while head and reversed_list:
         print(head.data, reversed_list.data)
         if head.data != reversed_list.data:
             return False
@@ -33,7 +33,7 @@ def is_palindrome(head):
         head = head.next
         reversed_list = reversed_list.next
 
-    return head == None and reversed_list == None
+    return not head and not reversed_list
 
 
 # Iterative Approach (with stack)
