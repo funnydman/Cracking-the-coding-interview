@@ -9,6 +9,9 @@ as to make a loop in the linked list.
 EXAMPLE
 Input: A - > B - > C - > D - > E - > C [the same C as earlier)
 Output: C
+
+
+https://leetcode.com/problems/linked-list-cycle/
 """
 
 from general import *
@@ -31,14 +34,28 @@ def is_loop(head):
 
 
 def is_loop1(head):
+    if not head:
+        return False
     slow = head
     fast = head.next
 
     while fast != slow:
-        if fast == None or fast.next == None:
+        if not fast or not fast.next:
             return False
 
         slow = slow.next
         fast = fast.next.next
 
     return True
+
+
+def has_cycle(head):
+    slow = fast = head
+    
+    while fast and fast.next:
+        slow = slow.next 
+        fast = fast.next.next
+        
+        if slow == fast:
+            return True
+    return False
