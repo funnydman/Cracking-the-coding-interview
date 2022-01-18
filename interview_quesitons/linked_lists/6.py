@@ -1,6 +1,8 @@
 """
 Implement a function to check if a linked list is a palindrome.
 Todo: implement recursively
+
+https://leetcode.com/problems/palindrome-linked-list/
 """
 
 from general import *
