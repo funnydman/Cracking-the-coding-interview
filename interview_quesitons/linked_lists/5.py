@@ -5,6 +5,8 @@ digit. The digits are stored in reverse order, such that the 1 's digit is at th
 function that adds the two numbers and returns the sum as a linked list.
 Todo:
     Write solution for the case when numbers have different length.
+    
+https://leetcode.com/problems/add-two-numbers/
 """
 
 from general import *
@@ -65,7 +67,6 @@ def sum_lists_forward(first, second):
         i -=1
 
     return curr_head.next
-
 
 head = sum_lists(list1, list2)
 
