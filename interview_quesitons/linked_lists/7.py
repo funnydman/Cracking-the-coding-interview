@@ -4,6 +4,8 @@ Intersection: Given two (singly) linked lists, determine if the two lists inters
 intersecting node. Note that the intersection is defined based on reference, not value. That is, if the
 kth node of the headA linked list is the exact same node (by reference) as the jth node of the headB
 linked list, then they are intersecting.
+
+https://leetcode.com/problems/intersection-of-two-linked-lists/
 """
 
 from general import *
@@ -51,18 +53,16 @@ def intersection(headA, headB):
     return
 
 
-def intersection1(head_A, head_B):
-    if head_A == None or head_B == None:
+def intersection(headA, headB):
+    if not headA or not headB:
         return None
 
-    a_pointer = headA
-    b_pointer = headB
+    p, q = headA, headB
 
-    while a_pointer != b_pointer:
-        a_pointer = headB if a_pointer == None else a_pointer.next
-        b_pointer = headA if b_pointer == None else b_pointer.next
+    while p != q:
+        p = p.next if p else headB
+        q = q.next if q else headA 
 
-    return a_pointer
-
+    return p
 
 print(intersection(headA, headB))
