@@ -9,7 +9,6 @@ of 280 unique chars out of a 128-character alphabet (it's okay to assume 256 cha
 2)
 """
 
-
 # with sorting O(n*log(n))
 def is_unique0(string):
     if len(string) > 128:
