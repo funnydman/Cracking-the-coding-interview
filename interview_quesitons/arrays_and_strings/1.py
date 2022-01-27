@@ -40,8 +40,7 @@ def is_unique1(string):
 def is_unique2(string):
     checker = 0
     for i in range(len(string)):
-        val = ord(string[i]) - ord('a');
-        print(checker & (1 << val))
+        val = ord(string[i]) - ord('a')
         if (checker & (1 << val)) > 0:
             return False
         checker |= (1 << val);
