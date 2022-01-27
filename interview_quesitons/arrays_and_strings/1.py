@@ -6,7 +6,9 @@ cannot use additional data structures?
 Notes:
 1) Check the length of the string, if we assume that all chars are ASCII char then you can't form a string
 of 280 unique chars out of a 128-character alphabet (it's okay to assume 256 characters//extended ASCII).
-2)
+
+
+https://leetcode.com/problems/contains-duplicate/
 """
 
 # with sorting O(n*log(n))
@@ -25,11 +27,11 @@ def is_unique1(string):
     if len(string) > 128:
         return False
 
-    char_set = set()
-    for i in range(len(string)):
-        if string[i] in char_set:
+    table = set()
+    for i in nums:
+        if i in table:
             return False
-        char_set.add(string[i])
+        table.add(i)
     return True
 
 
@@ -44,18 +46,3 @@ def is_unique2(string):
             return False
         checker |= (1 << val);
     return True
-
-
-is_unique = lambda string: len(set(string)) == len(string)
-
-assert is_unique0('abcdg') == True
-assert is_unique0('abcdbg') == False
-
-assert is_unique1('aabcd') == False
-assert is_unique1('abc') == True
-
-assert is_unique('aabcd') == False
-assert is_unique('abcd') == True
-
-assert is_unique2('aabcd') == False
-assert is_unique2('abcd') == True
