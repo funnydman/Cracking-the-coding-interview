@@ -1,44 +1,49 @@
 """
 Task:
-Check Permutation: Given two strings, write a method to decide if one is a permutation of the
+Check Permutation: Given two strings, write a method to decide if one is a permutation of the other.
 
 Questions to ask:
-1) Is permutation comparison is case sensitive (is God a permutation of a dog)?
+1) Is permutation comparison is case sensitive (is God a permutation of a dog)? (for this case: yes)
 2) Is white space significant (for this task: yes)
+3) Check the character size (ASCII assumed)
 
 """
 
 
-def check_permut1(string1, string2):
-    if len(string1) != len(string2):
+# Time complexity: O(n * n log n), Space complexity: O(1), sorting in place
+def check_permut1(s1, s2):
+    if len(s1) != len(s2):
         return False
 
-    return sorted(string1) == sorted(string2)
+    return sorted(s1) == sorted(s2)
 
 
-def check_permut2(string1, string2):
+def check_permut2(s1, s2):
     res = 0
-    for n in list(map(ord, string1))+list(map(ord, string2)):
-        res ^=n
+    for n in list(map(ord, s1)) + list(map(ord, s1)):
+        res ^= n
     return res == 0
 
-def check_permut3(string1, string2):
-    adict = {}
-    for i, c  in enumerate(string1):
-        if c not in adict:
-            adict[c] = 0
-        adict[c]+=1
 
-    for i, c in enumerate(string2):
-        if c not in adict:
+def check_permut3(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    table = {}
+    for i in range(len(s1)):
+        if not s1[i] in table:
+            table[s1[i]] = 0
+        table[s1[i]] += 1
+
+    for i in range(len(s2)):
+        if not s2[i] in table:
             return False
-        adict[c]+=-1
-
-        if adict[c] < 0:
+        table[s2[i]] -= 1
+        if table[s2[i]] < 0:
             return False
     return True
 
-print(check_permut3("abcd" , "badc"))
 
-print(check_permut3("abcm" , "badc"))
+assert check_permut3("abcd", "badc") is True
+
+assert check_permut3("abcm", "badc") is False
 
