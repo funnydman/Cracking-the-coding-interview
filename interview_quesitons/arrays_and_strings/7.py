@@ -1,7 +1,7 @@
 """
 Task:
 Rotate Matrix: Given an image represented by an NxN matrix, where each pixel in the image is 4
-bytes, write a method to rotate the image by 90 degrees. (an you do this in place?
+bytes, write a method to rotate the image by 90 degrees. (can you do this in place?)
 Notes:
 
 1) Implement withot allocating another 2d matrix
@@ -57,7 +57,7 @@ def rotate1(matrix):
 
 # Rotate four rectangles in one single loop
 def rotate3(matrix):
-    for i in range(n // 2 + n % 2):
+    for i in range((n+1) // 2):
         for j in range(n // 2):
             tmp = matrix[n - 1 - j][i]
             matrix[n - 1 - j][i] = matrix[n - 1 - i][n - j - 1]
