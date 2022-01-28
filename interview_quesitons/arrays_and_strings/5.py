@@ -35,6 +35,39 @@ def check_edits(str1, str2):
                 edited = True
         return True
 
+def one_way(s, p):
+    if s == p:
+        return True
+
+    len_s = len(s)
+    len_p = len(p)
+
+    # one charter added/removed
+    if len_s != len_p:
+        changed = False
+        i = 0
+        j = 0
+        while i < len_p:
+            if p[i] != s[j]:
+                if changed:
+                    return False
+                changed = True
+                j += 1
+                continue
+            i += 1
+            j += 1
+        return True
+    # one character changed
+    elif len_s == len_p:
+        changed = False
+        for i in range(len_s):
+            if s[i] != p[i]:
+                if changed:
+                    return False
+                changed = True
+        return True
+
+
 
 assert check_edits('pale', 'pale') is True
 assert check_edits('pale', 'ple') is True
