@@ -7,11 +7,9 @@ perform this operation in place.)
 
 """
 
-
 def strip(string):
     i = 0
-    l = len(string)
-    while i < l:
+    while i <ts len(string):
         if string[0] == ' ':
             string = string[1:]
 
