@@ -17,14 +17,14 @@ def check_permut1(s1, s2):
 
     return sorted(s1) == sorted(s2)
 
-
+# O(n^2), O(n) for map, O(n) for concatetion
 def check_permut2(s1, s2):
     res = 0
-    for n in list(map(ord, s1)) + list(map(ord, s1)):
+    for n in list(map(ord, s1)) + list(map(ord, s2)):
         res ^= n
     return res == 0
 
-
+# Time complexity: O(n), Space complexity O(max(len(s1), len(s2))
 def check_permut3(s1, s2):
     if len(s1) != len(s2):
         return False
