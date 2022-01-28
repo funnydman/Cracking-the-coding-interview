@@ -45,7 +45,6 @@ def is_perm_of_palindrome(string):
     return bit_vector == 0 or (bit_vector & (bit_vector - 1)) == 0
 
 
-
 assert is_perm_of_palindrome("Tact Coa") is True
 assert is_perm_of_palindrome("abcba") is True
 assert is_perm_of_palindrome("hello") is False
