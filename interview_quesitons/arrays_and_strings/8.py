@@ -7,6 +7,8 @@ call to isSubstring (e.g., "waterbottle" is a rotation of "erbottlewat").
 Notes:
 1) We can reduce the space to 0 (1) by using the first row as a replacement for the row array and the first
 column as a replacement for the column array.
+
+https://leetcode.com/problems/set-matrix-zeroes/
 """
 
 
@@ -28,8 +30,6 @@ def set_zeroes(matrix):
                 # zeroing the column
                 for c in range(m):
                     matrix[c][j] = 0
-
-                   
                 
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
