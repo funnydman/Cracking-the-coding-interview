@@ -10,7 +10,6 @@ There is O(n) solutions as well, for instance Knuth–Morris–Pratt algorithm
 """
 
 
-
 class Solution:
     def rotateString(self, s: str, goal: str) -> bool:
         if len(s) != len(goal):
@@ -40,8 +39,6 @@ def is_rotation(string1, string2):
 
 assert is_rotation('abcde', 'cdeab') is True
 
-
-
-# simple check O(n^2)
+# Algorithm Complexity O(n^2), Space Complexity O(n)
 def rotate_string(A, B):
     return len(A) == len(B) and B in A + A
