@@ -25,5 +25,6 @@ def _is_balanced(self, root):
     else:
         return max(left_height, right_height) + 1
 
+
 def is_balanced(self, root: TreeNode) -> bool:
     return self._isBalanced(root) != float('-inf')

@@ -18,24 +18,25 @@ root.left.right = TreeNode(6)
 root.right.right = TreeNode(11)
 root.right.left = TreeNode(8)
 
-# def lowest_common_ancestor(root, p, q):
-#     if root == p or root == q:
-#         return root
-#
-#     left = right = None
-#
-#     if root.left:
-#         left = self.lowestCommonAncestor(root.left, p, q)
-#     if root.right:
-#         right = self.lowestCommonAncestor(root.right, p, q)
-#
-#
-#     if left and right:
-#         return root
-#     else:
-#         return left or right
 
 def lowest_common_ancestor(root, p, q):
+    if root == p or root == q:
+        return root
+
+    left = right = None
+
+    if root.left:
+        left = lowest_common_ancestor(root.left, p, q)
+    if root.right:
+        right = lowest_common_ancestor(root.right, p, q)
+
+    if left and right:
+        return root
+    else:
+        return left or right
+
+
+def lowest_common_ancestor2(root, p, q):
     ans = None
 
     def helper(curr):

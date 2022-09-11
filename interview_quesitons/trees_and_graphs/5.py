@@ -35,4 +35,4 @@ def check_bst(root, _min=float('-inf'), _max=float('inf')):
     return True
 
 
-print(check_bst(root))
+assert check_bst(root) is True
